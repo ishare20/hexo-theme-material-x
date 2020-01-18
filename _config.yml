@@ -20,7 +20,7 @@ style: pure        # pure: 导航栏和标题栏背景是白色
 ############################### 服务开关 ###############################
 scrollreveal: true
 nodewaves: true
-busuanzi: true
+busuanzi: false
 # fastclick: true
 
 
@@ -53,7 +53,7 @@ backstretch:
   duration: 6000 # 持续时间（毫秒）
   fade: 2500     # 渐变（毫秒）
   images:
-    - https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg
+    - https://i.loli.net/2020/01/17/Wr5eN1HtJfa7PGb.png
 
 
 
@@ -62,20 +62,20 @@ backstretch:
 cover:
   scheme: search    # 后期将会提供多种封面方案
   height: half      # full（默认值）: 首页封面占据整个第一屏幕，其他页面占半个屏幕高度， half: 所有页面都封面都只占半个屏幕高度
-  title: Demo
+  title: 云库YunKuDL
   # logo: assets/logo.png    # logo和title只显示一个，若同时设置，则只显示logo
   # search_placeholder: '搜索'
   # 主页封面菜单
   features:
-    - name: 博文
+    - name: 首页
       icon: fas fa-rss
       url: /
-    - name: 项目
+    - name: PC
       icon: fas fa-code-branch
-      url: projects/
-    - name: 友链
+      url: categories/PC/
+    - name: APP
       icon: fas fa-link
-      url: friends/
+      url: categories/APP/
       rel: nofollow
     - name: 关于
       icon: fas fa-info-circle
@@ -85,20 +85,20 @@ cover:
 
 # 桌面端导航栏菜单
 menu_desktop:
-  - name: 示例
+  - name: 首页
     icon: fas fa-grin
     url: /
   - name: 分类
     icon: fas fa-folder-open
-    url: blog/categories/
+    url: categories/
     rel: nofollow
   - name: 标签
     icon: fas fa-hashtag
-    url: blog/tags/
+    url: tags/
     rel: nofollow
   - name: 归档
     icon: fas fa-archive
-    url: blog/archives/
+    url: archives/
     rel: nofollow
 
 # 手机端导航菜单（从右上角的按钮点击展开）
@@ -106,25 +106,15 @@ menu_mobile:
   - name: 近期文章
     icon: fas fa-clock
     url: /
-  - name: 文章归档
-    icon: fas fa-archive
-    url: blog/archives/
-    rel: nofollow
-  - name: 开源项目
+  - name: 分类
     icon: fas fa-code-branch
-    url: projects/
-  - name: 我的友链
-    icon: fas fa-link
-    url: friends/
-    rel: nofollow
-  - name: 主题文档
-    icon: fas fa-book
-    url: https://xaoxuu.com/wiki/material-x/
-    rel: nofollow
-  - name: 关于小站
+    url: categories/  
+  - name: 归档
+    icon: fas fa-archive
+    url: archives/
+  - name: 关于
     icon: fas fa-info-circle
     url: about/
-    rel: nofollow
 
 layout:
   # 文章列表（主页、自定义的列表）布局
@@ -132,7 +122,7 @@ layout:
     # 列表中每一篇文章的meta信息
     meta: [title, author, date, categories, wordcount, top]
     # 列表类页面的侧边栏
-    sidebar: [author, plain, list, grid, category, tagcloud]
+    sidebar: [category, tagcloud,, grid,plain]
   # 文章页面布局
   article:
     # 文章页面主体元素，你也可以在页面的Front-matter中设置
@@ -143,7 +133,7 @@ layout:
     header: [title, author, date, categories, counter, wordcount, top]
     footer: [updated, tags, share]
     # 文章页面的侧边栏
-    sidebar: [author, plain, toc, grid, category, tagcloud, list, related_posts]
+    sidebar: [toc, category, tagcloud,grid, plain,related_posts]
   # 其他的页面布局暂时等于文章列表
 
 
@@ -151,12 +141,12 @@ layout:
 sidebar:
   - widget: author
     avatar: https://cdn.jsdelivr.net/gh/xaoxuu/assets@master/avatar/avatar.png
-    jinrishici: true
-    social: true
+    jinrishici: false
+    social: false
   - widget: plain
     icon: fas fa-file
-    title: 文本部件
-    body: '这是一段支持markdown的文本<br>![](https://img.vim-cn.com/4e/3c87a2fd28fd0b9c2f27ce3f83f1e9275d0488.png)'
+    title: 微信订阅号
+    body: '扫码关注获取最新推送<br>![](https://i.loli.net/2020/01/17/YxJO1WopFPD9VZa.jpg)'
   - widget: toc
   - widget: grid
     icon: fas fa-map-signs
@@ -165,35 +155,25 @@ sidebar:
       - name: 近期文章
         icon: fas fa-clock
         url: /
-      - name: 文章归档
+      - name: 分类
         icon: fas fa-archive
-        url: blog/archives/
-        rel: nofollow
-      - name: 开源项目
-        icon: fas fa-code-branch
-        url: projects/
-      - name: 我的友链
-        icon: fas fa-link
-        url: friends/
-        rel: nofollow
-      - name: 主题文档
-        icon: fas fa-book
-        url: https://xaoxuu.com/wiki/material-x/
-        rel: nofollow
-      - name: 关于小站
+        url: categories/
+      - name: 归档
+        icon: fas fa-archive
+        url: archives/
+      - name: 关于
         icon: fas fa-info-circle
         url: about/
-        rel: nofollow
   - widget: category
     more:
       icon: fas fa-expand-arrows-alt
-      url: blog/categories/
+      url: categories/
       rel: nofollow
   - widget: tagcloud
     icon: fas fa-tags
     more:
       icon: fas fa-expand-arrows-alt
-      url: blog/tags/
+      url: tags/
       rel: nofollow
   # - widget: related_posts # 需要安装插件  npm i -S hexo-related-popular-posts
   - widget: music
@@ -209,7 +189,7 @@ sidebar:
     id: 2615636388     # 歌曲/专辑/歌单 ID
   - widget: list
     icon: fas fa-thumbs-up
-    title: 强烈推荐
+    title: 链接
     rows:
       - name: Hexo脚本（Mac）
         url: https://xaoxuu.com/wiki/hexo.sh/
@@ -226,14 +206,12 @@ sidebar:
 
 # 社交信息
 social:
-  - icon: fas fa-rss
-    url: atom.xml
+  - icon: fas fa-home
+    url: https://yunkudl.com
+  - icon: fab fa-weixin
+    url: https://i.loli.net/2020/01/17/YxJO1WopFPD9VZa.jpg
   - icon: fas fa-envelope
-    url: mailto:me@xaoxuu.com
-  - icon: fab fa-github
-    url: https://github.com/xaoxuu
-  - icon: fas fa-headphones-alt
-    url: https://music.163.com/#/user/home?id=63035382
+    url: mailto:admin@yunkudl.com
 
 
 # 分享按钮
@@ -245,9 +223,9 @@ share:
   - id: qzone
     name: QQ空间
     img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qzone.png
-  # - id: qrcode
-  #   name: 微信
-  #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png
+  - id: qrcode
+    name: 微信
+    img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/wechat.png
   - id: weibo
     name: 微博
     img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/weibo.png
@@ -256,8 +234,8 @@ share:
   #   img: https://cdn.jsdelivr.net/gh/xaoxuu/assets@19.1.9/logo/128/qrcode.png
 
 
-footer_post: '<center>这是文章页脚，可以设置打赏图片：<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>'
-# footer: '网页页脚文字，支持[markdown](/)'
+#footer_post: '<center>扫码关注<br><fancybox>![](https://img.vim-cn.com/4a/5f8244a7c6e1e069a781b84ed11008e7955e16.png)</fancybox></center>'
+#footer: '网页页脚文字'
 
 
 ############################### 评论系统 ###############################
@@ -277,7 +255,7 @@ footer_post: '<center>这是文章页脚，可以设置打赏图片：<br><fancy
 ############################### 杂项，请勿删除 ###############################
 #valine配置
 valine:
-  enable: true # 如果你想用Valine评论系统，请设置enable为true
+  enable: false # 如果你想用Valine评论系统，请设置enable为true
   volantis: true # 是否启用volantis版本（禁止匿名，增加若干贴吧、QQ表情）
   # 还需要在根目录配置文件中添加下面这三行内容
   # leancloud:
